@@ -20,8 +20,9 @@ const Messages = require('./Messages');
  * Be sure to check your permissions settings for your skill on https://developer.amazon.com/
  */
 const ALL_ADDRESS_PERMISSION = "read::alexa:device:all:address";
+const POSTAL_ADDRESS_PERMISSION = "read::alexa:device:all:address:country_and_postal_code"
 
-const PERMISSIONS = [ALL_ADDRESS_PERMISSION];
+const PERMISSIONS = [POSTAL_ADDRESS_PERMISSION];
 
 /**
  * This is the handler for the NewSession event.
@@ -82,8 +83,10 @@ const getAddressHandler = function() {
                 console.log("Address successfully retrieved, now responding to user.");
                 const address = addressResponse.address;
 
+                #const ADDRESS_MESSAGE = Messages.ADDRESS_AVAILABLE +
+                #    `${address['addressLine1']}, ${address['stateOrRegion']}, ${address['postalCode']}`;
                 const ADDRESS_MESSAGE = Messages.ADDRESS_AVAILABLE +
-                    `${address['addressLine1']}, ${address['stateOrRegion']}, ${address['postalCode']}`;
+                      `${address['countryCode']}, ${address['postalCode']}`;
 
                 this.emit(":tell", ADDRESS_MESSAGE);
                 break;
