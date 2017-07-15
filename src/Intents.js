@@ -14,7 +14,7 @@
  * When received, we should retrieve the customer's data from
  * the Address API.
  */
-const GET_ADDRESS = "GetAddress";
+const GET_REPEATER = "GetRepeater";
 
 /**
  * This is an Amazon built-in intent.
@@ -32,7 +32,7 @@ const AMAZON_CANCEL = "AMAZON.CancelIntent";
 const AMAZON_STOP = "AMAZON.StopIntent";
 
 module.exports = {
-    "GET_ADDRESS": GET_ADDRESS,
+    "GET_REPEATER": GET_REPEATER,
     "AMAZON_HELP": AMAZON_HELP,
     "AMAZON_CANCEL": AMAZON_CANCEL,
     "AMAZON_STOP": AMAZON_STOP
