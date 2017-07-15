@@ -1,7 +1,7 @@
 {
   "intents": [
     {
-      "intent": "GetAddress"
+      "intent": "GetRepeater"
     },
     {
       "intent": "AMAZON.CancelIntent"
